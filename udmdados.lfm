@@ -1,0 +1,546 @@
+object DmDados: TDmDados
+  OldCreateOrder = False
+  Height = 207
+  HorizontalOffset = 916
+  VerticalOffset = 199
+  Width = 411
+  object cnx_BD: TZConnection
+    ControlsCodePage = cCP_UTF8
+    AutoEncodeStrings = True
+    Properties.Strings = (
+      'AutoEncodeStrings=True'
+      'controls_cp=CP_UTF8'
+    )
+    Connected = True
+    HostName = 'localhost'
+    Port = 5433
+    Database = 'ml_teste'
+    User = 'postgres'
+    Password = 'postgres'
+    Protocol = 'postgresql-9'
+    Left = 208
+    Top = 16
+  end
+  object ds1: TDataSource
+    DataSet = qry_dados
+    Left = 24
+    Top = 72
+  end
+  object qry_dados: TZQuery
+    Connection = cnx_BD
+    SQL.Strings = (
+      'select * from tbldados'
+    )
+    Params = <>
+    Left = 24
+    Top = 128
+    object qry_dadosURL: TStringField
+      FieldKind = fkData
+      FieldName = 'URL'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_dadosclient_id: TLongintField
+      FieldKind = fkData
+      FieldName = 'client_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_dadosclient_secret: TStringField
+      FieldKind = fkData
+      FieldName = 'client_secret'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_dadoscode: TStringField
+      FieldKind = fkData
+      FieldName = 'code'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_dadosaccess_token: TStringField
+      FieldKind = fkData
+      FieldName = 'access_token'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_dadosuser_id: TStringField
+      FieldKind = fkData
+      FieldName = 'user_id'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_dadosrefresh_token: TStringField
+      FieldKind = fkData
+      FieldName = 'refresh_token'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_dadosContaID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ContaID'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+  end
+  object qry_token: TZQuery
+    Connection = cnx_BD
+    SQL.Strings = (
+      'select * from tab_appid'
+    )
+    Params = <>
+    Left = 80
+    Top = 128
+    object qry_tokenID: TLongintField
+      FieldKind = fkData
+      FieldName = 'ID'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_tokenreftoken: TStringField
+      FieldKind = fkData
+      FieldName = 'reftoken'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_tokenappid: TStringField
+      FieldKind = fkData
+      FieldName = 'appid'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_tokendthr_geracao: TDateTimeField
+      FieldKind = fkData
+      FieldName = 'dthr_geracao'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_tokengrant_type: TStringField
+      FieldKind = fkData
+      FieldName = 'grant_type'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 15
+    end
+    object qry_tokenclient_id: TStringField
+      FieldKind = fkData
+      FieldName = 'client_id'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+    object qry_tokensecret_key: TStringField
+      FieldKind = fkData
+      FieldName = 'secret_key'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 120
+    end
+  end
+  object dsToken: TDataSource
+    DataSet = qry_token
+    Left = 80
+    Top = 72
+  end
+  object dsPedidos: TDataSource
+    DataSet = qry_pedidos
+    Left = 144
+    Top = 72
+  end
+  object qry_pedidos: TZQuery
+    Connection = cnx_BD
+    SQL.Strings = (
+      'select * from tab_itens_pedido_mkt'
+      'where ped_itens_order_id = :ped_principal_order_id'
+      'order by ped_itens_id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ped_principal_order_id'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsPaiPedidos
+    Left = 144
+    Top = 128
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ped_principal_order_id'
+        ParamType = ptUnknown
+      end>
+    object qry_pedidosped_itens_id: TLongintField
+      FieldKind = fkData
+      FieldName = 'ped_itens_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_pedidosped_itens_order_id: TLargeintField
+      FieldKind = fkData
+      FieldName = 'ped_itens_order_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_pedidosped_itens_reason: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_itens_reason'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_pedidosped_itens_date_approved: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_itens_date_approved'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_pedidosped_itens_pack_id: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_itens_pack_id'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+  end
+  object qry_pai_pedidos: TZQuery
+    Connection = cnx_BD
+    AfterOpen = qry_pai_pedidosAfterOpen
+    BeforeClose = qry_pai_pedidosBeforeClose
+    SQL.Strings = (
+      'select * from tab_pedidos_mkt'
+    )
+    Params = <>
+    Left = 208
+    Top = 128
+    object qry_pai_pedidosped_principal_id: TLongintField
+      FieldKind = fkData
+      FieldName = 'ped_principal_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_pai_pedidosped_principal_order_id: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_principal_order_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qry_pai_pedidosped_principal_nome: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_principal_nome'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_pai_pedidosped_principal_shipping_id: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_principal_shipping_id'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 40
+    end
+    object qry_pai_pedidosped_principal_payment_method: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_principal_payment_method'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 50
+    end
+    object qry_pai_pedidosped_principal_order_value: TFloatField
+      FieldKind = fkData
+      FieldName = 'ped_principal_order_value'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Precision = 786434
+    end
+    object qry_pai_pedidosped_principal_status: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_principal_status'
+      Index = 6
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+    end
+    object qry_pai_pedidosped_principal_date_approved: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_principal_date_approved'
+      Index = 7
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_pai_pedidosped_principal_payer_id: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_principal_payer_id'
+      Index = 8
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_pai_pedidosped_principal_pack_id: TStringField
+      FieldKind = fkData
+      FieldName = 'ped_principal_pack_id'
+      Index = 9
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 25
+    end
+  end
+  object dsPaiPedidos: TDataSource
+    DataSet = qry_pai_pedidos
+    Left = 208
+    Top = 72
+  end
+  object ds_dadospgt: TDataSource
+    DataSet = qry_dadospgt
+    Left = 288
+    Top = 72
+  end
+  object qry_dadospgt: TZQuery
+    Connection = cnx_BD
+    SQL.Strings = (
+      'select * from tab_pedidos_dadospgt'
+      'where pgt_order_id = :ped_principal_order_id'
+    )
+    Params = <    
+      item
+        DataType = ftUnknown
+        Name = 'ped_principal_order_id'
+        ParamType = ptUnknown
+      end>
+    DataSource = dsPaiPedidos
+    Left = 288
+    Top = 128
+    ParamData = <    
+      item
+        DataType = ftUnknown
+        Name = 'ped_principal_order_id'
+        ParamType = ptUnknown
+      end>
+    object qry_dadospgtid: TLongintField
+      FieldKind = fkData
+      FieldName = 'id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_dadospgtpgt_payer_id: TStringField
+      FieldKind = fkData
+      FieldName = 'pgt_payer_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_dadospgtpgt_name: TStringField
+      FieldKind = fkData
+      FieldName = 'pgt_name'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_dadospgtpgt_order_id: TStringField
+      FieldKind = fkData
+      FieldName = 'pgt_order_id'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 200
+    end
+    object qry_dadospgtpgt_payment_date: TStringField
+      FieldKind = fkData
+      FieldName = 'pgt_payment_date'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_dadospgtpgt_payment_method: TStringField
+      FieldKind = fkData
+      FieldName = 'pgt_payment_method'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+  object ds_clientes: TDataSource
+    DataSet = qry_clientes
+    Left = 361
+    Top = 72
+  end
+  object qry_clientes: TZQuery
+    Connection = cnx_BD
+    SQL.Strings = (
+      'select * from tab_info_clientes'
+    )
+    Params = <>
+    Left = 361
+    Top = 128
+    object qry_clientescli_id: TLongintField
+      FieldKind = fkData
+      FieldName = 'cli_id'
+      Index = 0
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = True
+    end
+    object qry_clientescli_payer_id: TStringField
+      FieldKind = fkData
+      FieldName = 'cli_payer_id'
+      Index = 1
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_clientescli_nome: TStringField
+      FieldKind = fkData
+      FieldName = 'cli_nome'
+      Index = 2
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_clientescli_cidade: TStringField
+      FieldKind = fkData
+      FieldName = 'cli_cidade'
+      Index = 3
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_clientescli_estado: TStringField
+      FieldKind = fkData
+      FieldName = 'cli_estado'
+      Index = 4
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+    object qry_clientescli_status: TStringField
+      FieldKind = fkData
+      FieldName = 'cli_status'
+      Index = 5
+      LookupCache = False
+      ProviderFlags = [pfInUpdate, pfInWhere]
+      ReadOnly = False
+      Required = False
+      Size = 100
+    end
+  end
+end

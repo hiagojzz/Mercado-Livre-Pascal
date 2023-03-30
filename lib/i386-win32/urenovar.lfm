@@ -1,0 +1,130 @@
+object frmRefreshToken: TfrmRefreshToken
+  Left = 581
+  Height = 393
+  Top = 219
+  Width = 673
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Renovar Refresh Token'
+  ClientHeight = 393
+  ClientWidth = 673
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.2.4.0'
+  object edtClientid: TEdit
+    Left = 168
+    Height = 23
+    Top = 16
+    Width = 152
+    TabOrder = 0
+    Text = '2470080450506772'
+  end
+  object edtSecretKey: TEdit
+    Left = 336
+    Height = 23
+    Top = 16
+    Width = 196
+    TabOrder = 1
+    Text = 'Z2htejGOo2FfthoKhew1VFa1b3YQNT3m'
+  end
+  object edtGrantType: TEdit
+    Left = 168
+    Height = 23
+    Top = 56
+    Width = 152
+    TabOrder = 2
+    Text = 'refresh_token'
+  end
+  object EdtRefresh: TEdit
+    Left = 337
+    Height = 23
+    Top = 56
+    Width = 196
+    TabOrder = 3
+  end
+  object lblClient: TLabel
+    Left = 168
+    Height = 15
+    Top = 0
+    Width = 48
+    Caption = 'Client ID:'
+    ParentColor = False
+  end
+  object lblSecret: TLabel
+    Left = 336
+    Height = 15
+    Top = 0
+    Width = 57
+    Caption = 'Secret Key:'
+    ParentColor = False
+  end
+  object lblGrant: TLabel
+    Left = 168
+    Height = 15
+    Top = 40
+    Width = 59
+    Caption = 'Grant Type:'
+    ParentColor = False
+  end
+  object lblRefresh: TLabel
+    Left = 336
+    Height = 15
+    Top = 40
+    Width = 76
+    Caption = 'Refresh Token:'
+    ParentColor = False
+  end
+  object btnRenovar: TButton
+    Left = 269
+    Height = 25
+    Top = 88
+    Width = 63
+    Caption = 'Renovar'
+    OnClick = btnRenovarClick
+    TabOrder = 4
+  end
+  object lblNovoTK: TLabel
+    Left = 308
+    Height = 15
+    Top = 128
+    Width = 63
+    Caption = 'Novo Token'
+    ParentColor = False
+  end
+  object btnFechar: TButton
+    Left = 337
+    Height = 25
+    Top = 88
+    Width = 63
+    Caption = 'Fechar'
+    OnClick = btnFecharClick
+    TabOrder = 5
+  end
+  object edtNovoRefresh: TDBEdit
+    Left = 160
+    Height = 23
+    Top = 141
+    Width = 372
+    DataField = 'reftoken'
+    MaxLength = 0
+    TabOrder = 6
+  end
+  object edtNovoAppID: TDBEdit
+    Left = 160
+    Height = 23
+    Top = 184
+    Width = 373
+    DataField = 'appid'
+    MaxLength = 0
+    TabOrder = 7
+  end
+  object lblAppID: TLabel
+    Left = 308
+    Height = 15
+    Top = 168
+    Width = 65
+    Caption = 'Novo AppID'
+    ParentColor = False
+  end
+end

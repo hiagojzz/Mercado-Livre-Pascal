@@ -1,0 +1,384 @@
+object frmBuscarPedidos: TfrmBuscarPedidos
+  Left = 313
+  Height = 514
+  Top = 99
+  Width = 1258
+  BorderIcons = [biSystemMenu, biMaximize]
+  BorderStyle = bsSingle
+  Caption = 'Buscar Pedidos'
+  ClientHeight = 514
+  ClientWidth = 1258
+  Font.CharSet = ANSI_CHARSET
+  Font.Height = -21
+  Font.Pitch = fpVariable
+  Font.Quality = fqDraft
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.2.4.0'
+  object pnllistagem: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 1258
+    Align = alTop
+    Caption = 'Listagem de pedidos - Mercado Livre'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clYellow
+    Font.Height = -24
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object edtseller_id: TEdit
+    Left = 768
+    Height = 23
+    Top = 120
+    Width = 160
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 1
+    Text = '1290797118'
+  end
+  object lblSellerid: TLabel
+    Left = 768
+    Height = 15
+    Top = 104
+    Width = 45
+    Caption = 'Seller ID:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object lblAppID: TLabel
+    Left = 768
+    Height = 15
+    Top = 144
+    Width = 39
+    Caption = 'App ID:'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+  end
+  object edtAppID: TEdit
+    Left = 768
+    Height = 23
+    Top = 160
+    Width = 456
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 2
+    Text = 'APP_USR-806885930489586-031008-769d24f735d0a04c9b9afeb07116b3b5-1290797118'
+  end
+  object cbxtype: TComboBox
+    Left = 944
+    Height = 23
+    Top = 120
+    Width = 80
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'paid'
+      'cancelled'
+      'confirmed'
+      'pending_cancel'
+      'payment_required'
+      'payment_in_process'
+      'partially_paid'
+      'partially_refunded'
+      'invalid'
+    )
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 3
+    Text = 'paid'
+  end
+  object Memo1: TMemo
+    Left = 752
+    Height = 160
+    Top = 352
+    Width = 504
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Lines.Strings = (
+      'Memo1'
+    )
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 4
+  end
+  object lbljsonres: TLabel
+    Left = 752
+    Height = 30
+    Top = 320
+    Width = 135
+    Caption = 'Json Resposta:'
+    ParentColor = False
+  end
+  object btnPesquisar: TButton
+    Left = 872
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Pesquisar'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = btnPesquisarClick
+    ParentFont = False
+    TabOrder = 5
+  end
+  object btnFechar: TButton
+    Left = 955
+    Height = 25
+    Top = 192
+    Width = 75
+    Caption = 'Fechar'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    OnClick = btnFecharClick
+    ParentFont = False
+    TabOrder = 6
+  end
+  object pnldados: TPanel
+    Left = 0
+    Height = 40
+    Top = 48
+    Width = 1272
+    ClientHeight = 40
+    ClientWidth = 1272
+    Color = clSilver
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 7
+    object Label2: TLabel
+      Left = 8
+      Height = 21
+      Top = 8
+      Width = 18
+      Caption = 'ID:'
+      ParentColor = False
+    end
+    object Label3: TLabel
+      Left = 472
+      Height = 21
+      Top = 8
+      Width = 35
+      Caption = 'Data:'
+      ParentColor = False
+    end
+    object Label4: TLabel
+      Left = 920
+      Height = 21
+      Top = 8
+      Width = 45
+      Caption = 'Status:'
+      ParentColor = False
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Height = 152
+    Top = 88
+    Width = 744
+    Color = clActiveCaption
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        Width = 30
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'ped_principal_order_id'
+        Width = 100
+        FieldName = 'ped_principal_order_id'
+      end    
+      item
+        Title.Caption = 'ped_principal_nome'
+        Width = 250
+        FieldName = 'ped_principal_nome'
+      end    
+      item
+        Title.Caption = 'ped_principal_shipping_id'
+        Width = 100
+        FieldName = 'ped_principal_shipping_id'
+      end    
+      item
+        Title.Caption = 'ped_principal_payment_method'
+        FieldName = 'ped_principal_payment_method'
+      end    
+      item
+        Title.Caption = 'ped_principal_order_value'
+        Width = 40
+        FieldName = 'ped_principal_order_value'
+      end    
+      item
+        Title.Caption = 'ped_principal_status'
+        FieldName = 'ped_principal_status'
+      end    
+      item
+        Title.Caption = 'ped_principal_date_approved'
+        Width = 100
+        FieldName = 'ped_principal_date_approved'
+      end    
+      item
+        Title.Caption = 'ped_principal_payer_id'
+        Width = 80
+        FieldName = 'ped_principal_payer_id'
+      end>
+    DataSource = DmDados.dsPaiPedidos
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 8
+  end
+  object EdtDataIni: TDateTimePicker
+    Left = 872
+    Height = 23
+    Hint = 'Data igual ou maior que'
+    Top = 232
+    Width = 104
+    ShowCheckBox = True
+    Checked = False
+    CenturyFrom = 2010
+    MaxDate = 2958465
+    MinDate = 2
+    AutoSize = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 9
+    TrailingSeparator = False
+    TextForNullDate = 'Data'
+    LeadingZeros = True
+    NullInputAllowed = False
+    Kind = dtkDateTime
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 18264
+    Time = 0.549422384261561
+    UseDefaultSeparators = True
+    HideDateTimeParts = [dtpHour, dtpMinute, dtpSecond, dtpMiliSec]
+    MonthNames = 'Long'
+  end
+  object EdtDataFin: TDateTimePicker
+    Left = 984
+    Height = 23
+    Hint = 'Data igual ou menor que'
+    Top = 232
+    Width = 106
+    ArrowShape = asModernLarger
+    ShowCheckBox = True
+    Checked = False
+    CenturyFrom = 2010
+    MaxDate = 2958465
+    MinDate = 2
+    AutoSize = False
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 10
+    TrailingSeparator = False
+    TextForNullDate = 'Data'
+    LeadingZeros = True
+    NullInputAllowed = False
+    Kind = dtkDate
+    TimeFormat = tf24
+    TimeDisplay = tdHMS
+    DateMode = dmComboBox
+    Date = 73415
+    Time = 0.549422384268837
+    UseDefaultSeparators = True
+    HideDateTimeParts = [dtpHour, dtpMinute, dtpSecond, dtpMiliSec]
+    MonthNames = 'Long'
+  end
+  object btnFiltrar: TButton
+    Left = 944
+    Height = 25
+    Top = 256
+    Width = 75
+    Caption = 'Filtrar'
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 11
+  end
+  object DBGrid2: TDBGrid
+    Left = 0
+    Height = 112
+    Top = 248
+    Width = 744
+    Color = clActiveCaption
+    Columns = <    
+      item
+        Title.Caption = 'id'
+        FieldName = 'id'
+      end    
+      item
+        Title.Caption = 'pgt_payer_id'
+        Width = 80
+        FieldName = 'pgt_payer_id'
+      end    
+      item
+        Title.Caption = 'pgt_name'
+        Width = 86
+        FieldName = 'pgt_name'
+      end    
+      item
+        Title.Caption = 'pgt_order_id'
+        Width = 75
+        FieldName = 'pgt_order_id'
+      end    
+      item
+        Title.Caption = 'pgt_payment_date'
+        Width = 80
+        FieldName = 'pgt_payment_date'
+      end    
+      item
+        Title.Caption = 'pgt_payment_method'
+        Width = 90
+        FieldName = 'pgt_payment_method'
+      end>
+    DataSource = DmDados.ds_dadospgt
+    Font.CharSet = ANSI_CHARSET
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentFont = False
+    TabOrder = 12
+  end
+  object DBGrid3: TDBGrid
+    Left = 0
+    Height = 144
+    Top = 368
+    Width = 744
+    Color = clActiveCaption
+    Columns = <>
+    TabOrder = 13
+  end
+end

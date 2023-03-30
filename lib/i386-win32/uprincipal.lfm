@@ -1,0 +1,226 @@
+object frmPrincipall: TfrmPrincipall
+  Left = 234
+  Height = 501
+  Top = 132
+  Width = 1144
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'frmPrincipall'
+  ClientHeight = 501
+  ClientWidth = 1144
+  OnClose = FormClose
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.2.4.0'
+  object pnlPrincipal: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 1144
+    Align = alTop
+    Caption = 'Projeto Inserção Mercado Livre'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clYellow
+    Font.Height = -27
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object btnPOST: TButton
+    Left = 1037
+    Height = 23
+    Top = 151
+    Width = 104
+    Caption = 'POST'
+    OnClick = btnPOSTClick
+    TabOrder = 1
+  end
+  object lblSecretKey: TLabel
+    Left = 568
+    Height = 15
+    Top = 144
+    Width = 54
+    Caption = 'SecretKey:'
+    ParentColor = False
+  end
+  object edtSecretKey: TEdit
+    Left = 568
+    Height = 23
+    Top = 160
+    Width = 224
+    TabOrder = 2
+    Text = 'Z2htejGOo2FfthoKhew1VFa1b3YQNT3m'
+  end
+  object lblURI: TLabel
+    Left = 568
+    Height = 15
+    Top = 104
+    Width = 64
+    Caption = 'RedirectURI:'
+    ParentColor = False
+  end
+  object edtURI: TEdit
+    Left = 568
+    Height = 23
+    Top = 120
+    Width = 160
+    TabOrder = 3
+    Text = 'http://localhost:80'
+  end
+  object lblCode: TLabel
+    Left = 440
+    Height = 15
+    Top = 181
+    Width = 31
+    Caption = 'Code:'
+    ParentColor = False
+  end
+  object edtCode: TEdit
+    Left = 440
+    Height = 23
+    Top = 197
+    Width = 234
+    TabOrder = 4
+  end
+  object lblGrant: TLabel
+    Left = 440
+    Height = 15
+    Top = 142
+    Width = 59
+    Caption = 'Grant Type:'
+    ParentColor = False
+  end
+  object edtGrantType: TEdit
+    Left = 440
+    Height = 23
+    Top = 158
+    Width = 111
+    TabOrder = 5
+    Text = 'authorization_code'
+  end
+  object lblRefresh: TLabel
+    Left = 592
+    Height = 15
+    Top = 248
+    Width = 76
+    Caption = 'Refresh Token:'
+    ParentColor = False
+  end
+  object EdtRefresh: TEdit
+    Left = 592
+    Height = 23
+    Top = 264
+    Width = 176
+    TabOrder = 6
+  end
+  object Memo1: TMemo
+    Left = 208
+    Height = 194
+    Top = 296
+    Width = 736
+    TabOrder = 7
+  end
+  object btnProdutos: TButton
+    Left = 1037
+    Height = 25
+    Top = 56
+    Width = 104
+    Caption = 'Produtos'
+    OnClick = btnProdutosClick
+    TabOrder = 8
+  end
+  object btnConfig: TButton
+    Left = 1037
+    Height = 25
+    Top = 104
+    Width = 104
+    Caption = 'Configurar Conta'
+    OnClick = btnConfigClick
+    TabOrder = 9
+  end
+  object BtnRenovar: TButton
+    Left = 1037
+    Height = 25
+    Top = 80
+    Width = 104
+    Caption = 'Renovar Token'
+    OnClick = BtnRenovarClick
+    TabOrder = 10
+  end
+  object EdtAccessToken: TEdit
+    Left = 424
+    Height = 23
+    Top = 264
+    Width = 152
+    TabOrder = 11
+  end
+  object lblAccess: TLabel
+    Left = 424
+    Height = 15
+    Top = 248
+    Width = 73
+    Caption = 'Access Token:'
+    ParentColor = False
+  end
+  object btnSair: TButton
+    Left = 1037
+    Height = 25
+    Top = 174
+    Width = 104
+    Caption = 'Sair'
+    OnClick = btnSairClick
+    TabOrder = 12
+  end
+  object edtAppID: TEdit
+    Left = 440
+    Height = 23
+    Top = 120
+    Width = 113
+    TabOrder = 13
+    Text = '2470080450506772'
+  end
+  object lblAppID: TLabel
+    Left = 440
+    Height = 15
+    Top = 104
+    Width = 39
+    Caption = 'App ID:'
+    ParentColor = False
+  end
+  object btnUserID: TButton
+    Left = 544
+    Height = 23
+    Top = 222
+    Width = 80
+    Caption = 'Access Token'
+    OnClick = btnUserIDClick
+    TabOrder = 14
+  end
+  object edtNovoRefresh: TEdit
+    Left = 680
+    Height = 23
+    Top = 197
+    Width = 176
+    TabOrder = 15
+  end
+  object lblNovoRefresh: TLabel
+    Left = 680
+    Height = 15
+    Top = 182
+    Width = 74
+    Caption = 'Novo Refresh:'
+    ParentColor = False
+  end
+  object btnBuscarP: TButton
+    Left = 1037
+    Height = 23
+    Top = 128
+    Width = 104
+    Caption = 'Buscar Pedidos'
+    OnClick = btnBuscarPClick
+    TabOrder = 16
+  end
+end

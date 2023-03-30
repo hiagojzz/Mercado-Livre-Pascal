@@ -1,0 +1,180 @@
+object frm_banco: Tfrm_banco
+  Left = 926
+  Height = 298
+  Top = 301
+  Width = 460
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Configurar Banco de Dados'
+  ClientHeight = 298
+  ClientWidth = 460
+  Position = poDesktopCenter
+  LCLVersion = '2.0.8.0'
+  object pl_Config: TPanel
+    Left = -8
+    Height = 58
+    Top = -8
+    Width = 504
+    Caption = 'Configurações do Banco de Dados'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clWhite
+    Font.Height = -21
+    Font.Name = '@Microsoft JhengHei'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object lbl_User: TLabel
+    Left = 80
+    Height = 24
+    Top = 72
+    Width = 71
+    Caption = 'Usuario'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = '@Microsoft JhengHei'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object edt_User: TEdit
+    Left = 81
+    Height = 23
+    Top = 96
+    Width = 128
+    TabOrder = 1
+    Text = 'postgres'
+  end
+  object lbl_Senha: TLabel
+    Left = 81
+    Height = 24
+    Top = 120
+    Width = 57
+    Caption = 'Senha'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = '@Microsoft JhengHei'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object edt_Senha: TEdit
+    Left = 80
+    Height = 23
+    Top = 145
+    Width = 128
+    EchoMode = emPassword
+    PasswordChar = '*'
+    TabOrder = 2
+    Text = 'postgres'
+  end
+  object lbl_host: TLabel
+    Left = 248
+    Height = 24
+    Top = 72
+    Width = 57
+    Caption = 'Banco'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = '@Microsoft JhengHei'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object edt_Banco: TEdit
+    Left = 248
+    Height = 23
+    Top = 96
+    Width = 136
+    TabOrder = 3
+    Text = 'ml_teste'
+  end
+  object lbl_DataBase: TLabel
+    Left = 248
+    Height = 24
+    Top = 120
+    Width = 77
+    Caption = 'Servidor'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = '@Microsoft JhengHei'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object edt_Servidor: TEdit
+    Left = 248
+    Height = 23
+    Top = 145
+    Width = 136
+    TabOrder = 4
+    Text = 'localhost'
+  end
+  object edt_Porta: TEdit
+    Left = 221
+    Height = 23
+    Top = 193
+    Width = 64
+    TabOrder = 5
+    Text = '5433'
+  end
+  object lbl_Porta: TLabel
+    Left = 168
+    Height = 24
+    Top = 192
+    Width = 50
+    Caption = 'Porta'
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -19
+    Font.Name = '@Microsoft JhengHei'
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object btn_Connect: TBitBtn
+    Left = 188
+    Height = 30
+    Top = 232
+    Width = 80
+    Caption = 'Conectar'
+    OnClick = btn_ConnectClick
+    TabOrder = 6
+  end
+  object BitBtn2: TBitBtn
+    Left = 188
+    Height = 30
+    Top = 264
+    Width = 80
+    Caption = 'Sair'
+    OnClick = BitBtn2Click
+    TabOrder = 7
+  end
+  object Button1: TButton
+    Left = 322
+    Height = 25
+    Top = 225
+    Width = 75
+    Caption = 'Button1'
+    OnClick = Button1Click
+    TabOrder = 8
+  end
+end

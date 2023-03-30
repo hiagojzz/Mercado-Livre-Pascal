@@ -1,0 +1,354 @@
+object frmProduto: TfrmProduto
+  Left = 528
+  Height = 587
+  Top = 133
+  Width = 785
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Cadastro de Produtos'
+  ClientHeight = 587
+  ClientWidth = 785
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.2.4.0'
+  object lblTitulo: TLabel
+    Left = 16
+    Height = 15
+    Top = 8
+    Width = 33
+    Caption = 'Titulo:'
+    ParentColor = False
+  end
+  object lblCategoria: TLabel
+    Left = 16
+    Height = 15
+    Top = 48
+    Width = 54
+    Caption = 'Categoria:'
+    ParentColor = False
+  end
+  object lblPreco: TLabel
+    Left = 16
+    Height = 15
+    Top = 88
+    Width = 33
+    Caption = 'Preço:'
+    ParentColor = False
+  end
+  object lblMoeda: TLabel
+    Left = 16
+    Height = 15
+    Top = 128
+    Width = 40
+    Caption = 'Moeda:'
+    ParentColor = False
+  end
+  object lblQuantidade: TLabel
+    Left = 16
+    Height = 15
+    Top = 168
+    Width = 65
+    Caption = 'Quantidade:'
+    ParentColor = False
+  end
+  object lblModoCompra: TLabel
+    Left = 376
+    Height = 15
+    Top = 8
+    Width = 97
+    Caption = 'Modo de Compra:'
+    ParentColor = False
+  end
+  object lblCondicaoItem: TLabel
+    Left = 376
+    Height = 15
+    Top = 48
+    Width = 98
+    Caption = 'Condição do Item:'
+    ParentColor = False
+  end
+  object lblListaTipo: TLabel
+    Left = 376
+    Height = 15
+    Top = 88
+    Width = 31
+    Caption = 'Tipos:'
+    ParentColor = False
+  end
+  object edtTitulo: TEdit
+    Left = 16
+    Height = 23
+    Top = 24
+    Width = 280
+    TabOrder = 0
+  end
+  object edtPreco: TEdit
+    Left = 16
+    Height = 23
+    Top = 104
+    Width = 280
+    TabOrder = 1
+  end
+  object edtQuantidade: TEdit
+    Left = 16
+    Height = 23
+    Top = 184
+    Width = 280
+    TabOrder = 2
+  end
+  object edtModoCompra: TEdit
+    Left = 376
+    Height = 23
+    Top = 24
+    Width = 360
+    ReadOnly = True
+    TabOrder = 3
+    Text = 'buy_it_now'
+  end
+  object edtCondicaoItem: TEdit
+    Left = 376
+    Height = 23
+    Top = 64
+    Width = 360
+    TabOrder = 4
+  end
+  object edtGarantia: TEdit
+    Left = 376
+    Height = 23
+    Top = 144
+    Width = 360
+    TabOrder = 5
+  end
+  object cbxTipos: TComboBox
+    Left = 376
+    Height = 21
+    Top = 104
+    Width = 104
+    ItemHeight = 15
+    ItemIndex = 1
+    Items.Strings = (
+      'gold_pro'
+      'gold_premium'
+      'gold_special'
+      'gold'
+      'silver'
+      'bronze'
+      'free'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 6
+    Text = 'gold_premium'
+  end
+  object lblGarantia: TLabel
+    Left = 376
+    Height = 15
+    Top = 128
+    Width = 89
+    Caption = 'Tipo de Garantia:'
+    ParentColor = False
+  end
+  object lblTempoGarantia: TLabel
+    Left = 376
+    Height = 15
+    Top = 168
+    Width = 102
+    Caption = 'Tempo de Garantia:'
+    ParentColor = False
+  end
+  object edtTempoGarantia: TEdit
+    Left = 376
+    Height = 23
+    Top = 184
+    Width = 360
+    TabOrder = 7
+  end
+  object lblImagens: TLabel
+    Left = 120
+    Height = 15
+    Top = 280
+    Width = 48
+    Caption = 'Imagens:'
+    ParentColor = False
+  end
+  object edtImagem_1: TEdit
+    Left = 168
+    Height = 23
+    Top = 256
+    Width = 368
+    TabOrder = 8
+  end
+  object edtImagem_2: TEdit
+    Left = 168
+    Height = 23
+    Top = 280
+    Width = 368
+    TabOrder = 9
+  end
+  object edtImagem_3: TEdit
+    Left = 168
+    Height = 23
+    Top = 304
+    Width = 368
+    TabOrder = 10
+  end
+  object lblMarca: TLabel
+    Left = 376
+    Height = 15
+    Top = 208
+    Width = 36
+    Caption = 'Marca:'
+    ParentColor = False
+  end
+  object lblModelo: TLabel
+    Left = 16
+    Height = 15
+    Top = 208
+    Width = 44
+    Caption = 'Modelo:'
+    ParentColor = False
+  end
+  object edtMarca: TEdit
+    Left = 376
+    Height = 23
+    Top = 224
+    Width = 360
+    TabOrder = 11
+  end
+  object edtModelo: TEdit
+    Left = 16
+    Height = 23
+    Top = 224
+    Width = 280
+    TabOrder = 12
+  end
+  object btnPublicar: TButton
+    Left = 264
+    Height = 25
+    Top = 328
+    Width = 75
+    Caption = 'Publicar'
+    OnClick = btnPublicarClick
+    TabOrder = 13
+  end
+  object Memo1: TMemo
+    Left = 3
+    Height = 224
+    Top = 360
+    Width = 776
+    ReadOnly = True
+    ScrollBars = ssAutoBoth
+    TabOrder = 14
+  end
+  object lblResultado: TLabel
+    Left = 3
+    Height = 15
+    Top = 344
+    Width = 55
+    Caption = 'Resultado:'
+    ParentColor = False
+  end
+  object edtAPPID: TEdit
+    Left = 488
+    Height = 23
+    Top = 104
+    Width = 168
+    TabOrder = 15
+  end
+  object lblAppID: TLabel
+    Left = 488
+    Height = 15
+    Top = 88
+    Width = 39
+    Caption = 'App ID:'
+    ParentColor = False
+  end
+  object btnJSON: TButton
+    Left = 360
+    Height = 25
+    Top = 328
+    Width = 75
+    Caption = 'MontarJSON'
+    OnClick = btnJSONClick
+    TabOrder = 16
+  end
+  object lblGender: TLabel
+    Left = 664
+    Height = 15
+    Top = 88
+    Width = 38
+    Caption = 'Gênero'
+    ParentColor = False
+  end
+  object cbxGender: TComboBox
+    Left = 664
+    Height = 21
+    Top = 104
+    Width = 104
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'Masculino'
+      'Feminino'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 17
+    Text = 'Masculino'
+  end
+  object LcbxCategorias: TDBLookupComboBox
+    Left = 16
+    Height = 24
+    Top = 63
+    Width = 160
+    KeyField = 'Cod_Cat'
+    ListField = 'Descr_Cat'
+    ListFieldIndex = 0
+    ListSource = DsCat
+    LookupCache = False
+    ScrollListDataset = True
+    Style = csOwnerDrawFixed
+    TabOrder = 18
+  end
+  object cbxMoeda: TComboBox
+    Left = 16
+    Height = 21
+    Top = 144
+    Width = 100
+    ItemHeight = 15
+    ItemIndex = 0
+    Items.Strings = (
+      'BRL'
+    )
+    Style = csOwnerDrawFixed
+    TabOrder = 19
+    Text = 'BRL'
+  end
+  object btnAtributos: TButton
+    Left = 184
+    Height = 26
+    Top = 63
+    Width = 75
+    Caption = 'Atributos'
+    OnClick = btnAtributosClick
+    TabOrder = 20
+  end
+  object MemCategorias: TMemDataset
+    FieldDefs = <    
+      item
+        Name = 'Cod_Cat'
+        DataType = ftString
+        Size = 50
+      end    
+      item
+        Name = 'Descr_Cat'
+        DataType = ftString
+        Size = 200
+      end>
+    Left = 616
+    Top = 280
+  end
+  object DsCat: TDataSource
+    DataSet = MemCategorias
+    Left = 704
+    Top = 277
+  end
+end

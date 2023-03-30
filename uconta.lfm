@@ -1,0 +1,235 @@
+object frmLogin: TfrmLogin
+  Left = 825
+  Height = 416
+  Top = 137
+  Width = 581
+  BorderStyle = bsSingle
+  Caption = 'Configuração de Login'
+  ClientHeight = 416
+  ClientWidth = 581
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '2.2.4.0'
+  object pnlConta: TPanel
+    Left = 0
+    Height = 50
+    Top = 0
+    Width = 581
+    Align = alTop
+    Caption = 'Configure sua conta do ML'
+    Color = clBlack
+    Font.CharSet = ANSI_CHARSET
+    Font.Color = clYellow
+    Font.Height = -16
+    Font.Pitch = fpVariable
+    Font.Quality = fqDraft
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+    TabOrder = 0
+  end
+  object btnSalvar: TButton
+    Left = 176
+    Height = 25
+    Top = 328
+    Width = 75
+    Caption = 'Salvar'
+    OnClick = btnSalvarClick
+    TabOrder = 1
+  end
+  object btnFechar: TButton
+    Left = 256
+    Height = 25
+    Top = 328
+    Width = 75
+    Caption = 'Fechar'
+    OnClick = btnFecharClick
+    TabOrder = 2
+  end
+  object btnBanco: TButton
+    Left = 336
+    Height = 25
+    Top = 328
+    Width = 104
+    Caption = 'Configurar Banco'
+    OnClick = btnBancoClick
+    TabOrder = 3
+  end
+  object btnNovo: TButton
+    Left = 8
+    Height = 25
+    Top = 328
+    Width = 75
+    Caption = 'Novo'
+    OnClick = btnNovoClick
+    TabOrder = 4
+  end
+  object btnEditar: TButton
+    Left = 91
+    Height = 25
+    Top = 328
+    Width = 77
+    Caption = 'Editar'
+    TabOrder = 5
+  end
+  object lblURL: TLabel
+    Left = 8
+    Height = 15
+    Top = 112
+    Width = 21
+    Caption = 'URL'
+    ParentColor = False
+  end
+  object lblClientID: TLabel
+    Left = 8
+    Height = 15
+    Top = 160
+    Width = 47
+    Caption = 'Client_ID'
+    ParentColor = False
+  end
+  object lblSecretKey: TLabel
+    Left = 8
+    Height = 15
+    Top = 208
+    Width = 57
+    Caption = 'Secret_KEY'
+    ParentColor = False
+  end
+  object lblCode: TLabel
+    Left = 8
+    Height = 15
+    Top = 248
+    Width = 28
+    Caption = 'Code'
+    ParentColor = False
+  end
+  object lblAccessToken: TLabel
+    Left = 280
+    Height = 15
+    Top = 112
+    Width = 72
+    Caption = 'Access_Token'
+    ParentColor = False
+  end
+  object lblUserID: TLabel
+    Left = 280
+    Height = 15
+    Top = 208
+    Width = 39
+    Caption = 'User_ID'
+    ParentColor = False
+  end
+  object lblRefToken: TLabel
+    Left = 280
+    Height = 15
+    Top = 160
+    Width = 75
+    Caption = 'Refresh_Token'
+    ParentColor = False
+  end
+  object btnBuscarCode: TButton
+    Left = 448
+    Height = 25
+    Top = 328
+    Width = 75
+    Caption = 'Code'
+    OnClick = btnBuscarCodeClick
+    TabOrder = 6
+  end
+  object edtURL: TDBEdit
+    Left = 8
+    Height = 23
+    Top = 128
+    Width = 243
+    DataField = 'URL'
+    DataSource = DmDados.ds1
+    MaxLength = 0
+    TabOrder = 7
+  end
+  object edtClientID: TDBEdit
+    Left = 8
+    Height = 23
+    Top = 176
+    Width = 243
+    DataField = 'client_id'
+    DataSource = DmDados.ds1
+    Alignment = taRightJustify
+    MaxLength = 0
+    TabOrder = 8
+  end
+  object edtSecretKey: TDBEdit
+    Left = 8
+    Height = 23
+    Top = 224
+    Width = 243
+    DataField = 'client_secret'
+    DataSource = DmDados.ds1
+    MaxLength = 0
+    TabOrder = 9
+  end
+  object edtCode: TDBEdit
+    Left = 8
+    Height = 23
+    Top = 264
+    Width = 243
+    DataField = 'code'
+    DataSource = DmDados.ds1
+    MaxLength = 0
+    TabOrder = 10
+  end
+  object edtRefToken: TDBEdit
+    Left = 280
+    Height = 23
+    Top = 176
+    Width = 296
+    DataField = 'refresh_token'
+    DataSource = DmDados.ds1
+    MaxLength = 0
+    TabOrder = 11
+  end
+  object edtAccess: TDBEdit
+    Left = 280
+    Height = 23
+    Top = 128
+    Width = 296
+    DataField = 'access_token'
+    DataSource = DmDados.ds1
+    MaxLength = 0
+    TabOrder = 12
+  end
+  object edtUserID: TDBEdit
+    Left = 280
+    Height = 23
+    Top = 224
+    Width = 296
+    DataField = 'user_id'
+    DataSource = DmDados.ds1
+    MaxLength = 0
+    TabOrder = 13
+  end
+  object lblBusca: TLabel
+    Left = 8
+    Height = 15
+    Top = 64
+    Width = 35
+    Caption = 'Buscar'
+    ParentColor = False
+  end
+  object edtBusca: TEdit
+    Left = 8
+    Height = 23
+    Top = 80
+    Width = 243
+    TabOrder = 14
+  end
+  object btnBusca: TButton
+    Left = 256
+    Height = 25
+    Top = 78
+    Width = 75
+    Caption = 'Buscar'
+    OnClick = btnBuscaClick
+    TabOrder = 15
+  end
+end

@@ -1,0 +1,8 @@
+object frmTokenPrincipal: TfrmTokenPrincipal
+  Left = 373
+  Height = 328
+  Top = 183
+  Width = 580
+  Caption = 'Renovação de Token'
+  LCLVersion = '2.2.4.0'
+end
